@@ -1,4 +1,4 @@
-// RUN PACK — comportamento base do site
+// BRASPACK — comportamento base do site
 document.addEventListener('DOMContentLoaded', function () {
 
   // Menu mobile
