@@ -290,16 +290,13 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .hero-logo-card {
   flex-shrink: 0;
   margin-top: 10px;
-  padding: 34px 44px;
-  background: #fff;
-  border: 1px solid rgba(255, 255, 255, .5);
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.35);
 }
 .hero-logo-stamp {
   display: block;
   width: 354px;
   max-width: 31vw;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
 }
 @media (max-width: 900px) {
   .hero-logo-card { display: none; }
