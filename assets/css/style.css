@@ -136,6 +136,13 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   background-image: radial-gradient(rgba(8,31,55,.10) 1.4px, transparent 1.4px);
   background-size: 16px 16px;
 }
+.section.on-grey.tx-hatch {
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0, rgba(255,255,255,.05) 1px, transparent 1px, transparent 14px),
+                     repeating-linear-gradient(-45deg, rgba(255,255,255,.05) 0, rgba(255,255,255,.05) 1px, transparent 1px, transparent 14px);
+}
+.section.on-grey.tx-dots {
+  background-image: radial-gradient(rgba(255,255,255,.08) 1.4px, transparent 1.4px);
+}
 
 /* ============================================================
    Buttons
@@ -382,7 +389,15 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
    Sections & Alternating backgrounds
    ============================================================ */
 .section { padding: 90px 0; }
-.section.on-grey { background: var(--background-grey); }
+.section.on-grey {
+  background: var(--primary-navy);
+  color: #eaeaea;
+}
+.section.on-grey h2, .section.on-grey h3 { color: #fff; }
+.section.on-grey p { color: #c9c9c9; }
+.section.on-grey strong { color: #fff; }
+.section.on-grey .eyebrow { color: var(--accent-yellow); }
+.section.on-grey li.spec-item { color: #eaeaea; }
 .section.on-white { background: var(--background-white); }
 .section.on-dark {
   background: var(--dark-section);
@@ -390,6 +405,8 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 }
 .section.on-dark h2, .section.on-dark h3 { color: #fff; }
 .section.on-dark p { color: #c9c9c9; }
+.section.on-dark strong { color: #fff; }
+.section.on-dark .eyebrow { color: var(--accent-yellow); }
 .section.tight { padding: 60px 0; }
 
 /* ============================================================
