@@ -824,7 +824,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 }
 .footer-grid li { margin-bottom: 10px; font-size: .92rem; }
 .footer-grid a:hover { color: var(--accent-yellow); }
-.footer-brand img { height: 40px; margin-bottom: 16px; background: #fff; padding: 8px 14px; border-radius: 6px; }
+.footer-brand img { height: 40px; margin-bottom: 16px; }
 .footer-brand p { color: #b9b9b9; font-size: .9rem; max-width: 280px; }
 .footer-bottom {
   display: flex;
