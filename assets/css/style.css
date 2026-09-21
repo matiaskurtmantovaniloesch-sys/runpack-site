@@ -281,7 +281,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .hero-media::after {
   content: "";
   position: absolute; inset: 0;
-  background: rgba(8,31,55,.39);
+  background: rgba(8,31,55,.2);
 }
 .hero-content {
   position: relative;
@@ -361,7 +361,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .page-hero-media::after {
   content: "";
   position: absolute; inset: 0;
-  background: rgba(8,31,55,.46);
+  background: rgba(8,31,55,.23);
 }
 .page-hero.on-video .container { position: relative; z-index: 2; }
 .page-hero.on-video .eyebrow { color: var(--accent-yellow); }
