@@ -315,11 +315,33 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .stat-strip {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  z-index: 2;
+  z-index: 1;
   background: rgba(8,31,55,.92);
   border-top: 1px solid rgba(255,255,255,.12);
   padding: 26px 0;
+  transform: translateY(0px);
+  will-change: transform;
 }
+.stat-strip-handle {
+  position: absolute;
+  top: -18px; left: 50%;
+  transform: translateX(-50%);
+  width: 64px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none; user-select: none;
+}
+.stat-strip-handle span {
+  width: 44px; height: 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.45);
+  transition: background var(--transition);
+}
+.stat-strip-handle:hover span { background: rgba(255,255,255,.7); }
+.stat-strip-handle:active { cursor: grabbing; }
+.stat-strip.dragging { transition: none; }
+.stat-strip:not(.dragging) { transition: transform .2s ease; }
 .stat-strip .container {
   display: flex;
   flex-wrap: wrap;

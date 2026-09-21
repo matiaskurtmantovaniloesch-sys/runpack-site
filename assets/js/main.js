@@ -75,4 +75,52 @@ document.addEventListener('DOMContentLoaded', function () {
       if (progressFill) progressFill.style.width = scrolled + '%';
     }, { passive: true });
   }
+
+  // Faixa de estatísticas do hero: arrastável para cima/baixo sobre o vídeo
+  var statStrip = document.getElementById('statStrip');
+  var statHandle = statStrip ? statStrip.querySelector('.stat-strip-handle') : null;
+  var heroSection = statStrip ? statStrip.closest('.hero') : null;
+  if (statStrip && statHandle && heroSection) {
+    var dragging = false;
+    var startY = 0;
+    var startOffset = 0;
+    var offset = 0;
+
+    var clampOffset = function (value) {
+      var maxUp = Math.max(0, heroSection.offsetHeight - statStrip.offsetHeight - 40);
+      if (value < -maxUp) return -maxUp;
+      if (value > 0) return 0;
+      return value;
+    };
+
+    var onPointerMove = function (e) {
+      if (!dragging) return;
+      offset = clampOffset(startOffset + (e.clientY - startY));
+      statStrip.style.transform = 'translateY(' + offset + 'px)';
+    };
+
+    var onPointerUp = function (e) {
+      if (!dragging) return;
+      dragging = false;
+      statStrip.classList.remove('dragging');
+      try { statHandle.releasePointerCapture(e.pointerId); } catch (err) {}
+    };
+
+    statHandle.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      startY = e.clientY;
+      startOffset = offset;
+      statStrip.classList.add('dragging');
+      statHandle.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    statHandle.addEventListener('pointermove', onPointerMove);
+    statHandle.addEventListener('pointerup', onPointerUp);
+    statHandle.addEventListener('pointercancel', onPointerUp);
+
+    window.addEventListener('resize', function () {
+      offset = clampOffset(offset);
+      statStrip.style.transform = 'translateY(' + offset + 'px)';
+    });
+  }
 });
