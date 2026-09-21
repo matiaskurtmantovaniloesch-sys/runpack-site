@@ -76,27 +76,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  // Faixa de estatísticas do hero: arrastável para cima/baixo sobre o vídeo
+  // Faixa de estatísticas do hero: expande para cima sobre o vídeo,
+  // mantendo as informações ancoradas embaixo (mesmo lugar) enquanto cresce
   var statStrip = document.getElementById('statStrip');
   var statHandle = statStrip ? statStrip.querySelector('.stat-strip-handle') : null;
   var heroSection = statStrip ? statStrip.closest('.hero') : null;
   if (statStrip && statHandle && heroSection) {
     var dragging = false;
     var startY = 0;
-    var startOffset = 0;
-    var offset = 0;
+    var startExtra = 0;
+    var extra = 0;
+    var baseHeight = statStrip.offsetHeight;
 
-    var clampOffset = function (value) {
-      var maxUp = Math.max(0, heroSection.offsetHeight - statStrip.offsetHeight - 40);
-      if (value < -maxUp) return -maxUp;
-      if (value > 0) return 0;
+    var clampExtra = function (value) {
+      var maxExtra = Math.max(0, heroSection.offsetHeight - baseHeight - 40);
+      if (value < 0) return 0;
+      if (value > maxExtra) return maxExtra;
       return value;
+    };
+
+    var applyHeight = function () {
+      statStrip.style.height = (baseHeight + extra) + 'px';
     };
 
     var onPointerMove = function (e) {
       if (!dragging) return;
-      offset = clampOffset(startOffset + (e.clientY - startY));
-      statStrip.style.transform = 'translateY(' + offset + 'px)';
+      // arrastar para cima (clientY menor) aumenta a altura (expande)
+      extra = clampExtra(startExtra + (startY - e.clientY));
+      applyHeight();
     };
 
     var onPointerUp = function (e) {
@@ -109,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     statHandle.addEventListener('pointerdown', function (e) {
       dragging = true;
       startY = e.clientY;
-      startOffset = offset;
+      startExtra = extra;
       statStrip.classList.add('dragging');
       statHandle.setPointerCapture(e.pointerId);
       e.preventDefault();
@@ -119,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
     statHandle.addEventListener('pointercancel', onPointerUp);
 
     window.addEventListener('resize', function () {
-      offset = clampOffset(offset);
-      statStrip.style.transform = 'translateY(' + offset + 'px)';
+      extra = clampExtra(extra);
+      applyHeight();
     });
   }
 });
