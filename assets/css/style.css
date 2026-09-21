@@ -278,11 +278,6 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .hero-media video, .hero-media img {
   width: 100%; height: 100%; object-fit: cover;
 }
-.hero-media::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: rgba(4,15,28,.5);
-}
 .hero-content {
   position: relative;
   z-index: 2;
@@ -357,11 +352,6 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .page-hero-media { position: absolute; inset: 0; z-index: 0; }
 .page-hero-media video, .page-hero-media img {
   width: 100%; height: 100%; object-fit: cover;
-}
-.page-hero-media::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: rgba(4,15,28,.55);
 }
 .page-hero.on-video .container { position: relative; z-index: 2; }
 .page-hero.on-video .eyebrow { color: var(--accent-yellow); }
