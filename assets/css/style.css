@@ -410,6 +410,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   padding: 34px 28px;
   transition: transform var(--transition), box-shadow var(--transition);
 }
+.pillar-card p { color: var(--ink); }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .pillar-icon {
   width: 54px; height: 54px;
