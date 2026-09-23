@@ -668,7 +668,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
   justify-content: center;
   gap: 36px;
   width: max-content;
-  animation: logo-scroll 26s linear 1 forwards;
+  animation: logo-scroll 26s linear infinite;
 }
 .logo-marquee:hover .logo-track { animation-play-state: paused; }
 .logo-track img {
@@ -688,7 +688,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 }
 @keyframes logo-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.3334%); }
 }
 @media (prefers-reduced-motion: reduce) {
   .logo-track { animation: none; }
