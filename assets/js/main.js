@@ -18,18 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Efeito spotlight/glow nos cards ao passar o mouse
-  var glowCards = document.querySelectorAll('.pillar-card');
-  glowCards.forEach(function (card) {
-    card.addEventListener('pointermove', function (e) {
-      var rect = card.getBoundingClientRect();
-      var mx = ((e.clientX - rect.left) / rect.width) * 100;
-      var my = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--mx', mx + '%');
-      card.style.setProperty('--my', my + '%');
-    });
-  });
-
   // Revelação suave no scroll
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {

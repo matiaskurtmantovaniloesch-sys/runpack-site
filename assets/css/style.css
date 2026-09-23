@@ -434,42 +434,45 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   position: relative;
   overflow: hidden;
 }
-.pillar-card::before {
+.pillar-card .pillar-skew,
+.pillar-card .pillar-skew-blur {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(240, 197, 15, .22), transparent 70%);
-  opacity: 0;
-  transition: opacity .35s ease;
+  top: 0;
+  left: 40px;
+  width: 55%;
+  height: 100%;
+  border-radius: var(--radius);
+  transform: skewX(15deg);
+  transition: all .5s ease;
+  background: linear-gradient(315deg, var(--primary-green), var(--primary-green-dark));
+  z-index: 0;
   pointer-events: none;
 }
-.pillar-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: radial-gradient(160px circle at var(--mx, 50%) var(--my, 50%), rgba(240, 197, 15, .9), transparent 70%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity .35s ease;
-  pointer-events: none;
+.pillar-card .pillar-skew-blur { filter: blur(30px); opacity: .65; }
+.pillar-card:hover .pillar-skew,
+.pillar-card:hover .pillar-skew-blur {
+  left: 0;
+  width: 100%;
+  transform: skewX(0deg);
 }
-.pillar-card:hover::before, .pillar-card:hover::after { opacity: 1; }
-.pillar-card p { color: var(--ink); }
+.pillar-card p { color: var(--ink); position: relative; z-index: 2; transition: color .4s ease; }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .pillar-icon {
+  position: relative;
+  z-index: 2;
   width: 54px; height: 54px;
   border-radius: 50%;
   background: rgba(212,173,2,.15);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px;
+  transition: background .4s ease;
 }
-.pillar-icon svg { width: 26px; height: 26px; stroke: var(--accent-yellow-hover); }
-.pillar-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.pillar-icon svg { width: 26px; height: 26px; stroke: var(--accent-yellow-hover); transition: stroke .4s ease; }
+.pillar-card h3 { position: relative; z-index: 2; margin-bottom: 10px; font-size: 1.2rem; transition: color .4s ease; }
+.pillar-card:hover h3, .pillar-card:hover p { color: #fff; }
+.pillar-card:hover .pillar-icon { background: rgba(255,255,255,.2); }
+.pillar-card:hover .pillar-icon svg { stroke: #fff; }
 
 /* ============================================================
    Steps grid (linha de produção)
