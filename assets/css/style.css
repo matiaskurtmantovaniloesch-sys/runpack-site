@@ -682,6 +682,10 @@ three-d-stage:not(:defined) { visibility: hidden; }
   height: 76px;
   max-width: 233px;
 }
+.logo-track img.logo-frutata {
+  height: 67px;
+  max-width: 204px;
+}
 @keyframes logo-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -693,6 +697,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
   .logo-track { gap: 22px; }
   .logo-track img { height: 73px; max-width: 218px; }
   .logo-track img.logo-bella-sicilia { height: 58px; max-width: 174px; }
+  .logo-track img.logo-frutata { height: 51px; max-width: 153px; }
 }
 
 /* ============================================================
