@@ -402,7 +402,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   display: block;
   height: 210px;
   width: auto;
-  margin: 0 auto 40px;
+  margin: 0 auto;
 }
 .pillars {
   display: grid;
