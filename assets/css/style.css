@@ -398,6 +398,12 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 /* ============================================================
    Pillars (Eficiência / Qualidade / Suporte)
    ============================================================ */
+.sm-machines-logo {
+  display: block;
+  height: 70px;
+  width: auto;
+  margin: 0 auto 40px;
+}
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
