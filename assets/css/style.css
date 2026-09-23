@@ -678,6 +678,10 @@ three-d-stage:not(:defined) { visibility: hidden; }
   object-fit: contain;
   flex-shrink: 0;
 }
+.logo-track img.logo-bella-sicilia {
+  height: 76px;
+  max-width: 233px;
+}
 @keyframes logo-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -688,6 +692,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 @media (max-width: 640px) {
   .logo-track { gap: 22px; }
   .logo-track img { height: 73px; max-width: 218px; }
+  .logo-track img.logo-bella-sicilia { height: 58px; max-width: 174px; }
 }
 
 /* ============================================================
