@@ -653,80 +653,40 @@ three-d-stage:not(:defined) { visibility: hidden; }
 .timeline-item p { font-size: .95rem; }
 
 /* ============================================================
-   Logo cloud (clientes / prova social)
+   Logo marquee (clientes / prova social) — carrossel infinito
    ============================================================ */
-.logo-cloud {
+.logo-marquee {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-left: 1px solid var(--secondary-light-grey);
-  border-right: 1px solid var(--secondary-light-grey);
+  overflow: hidden;
+  padding: 20px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
 }
-.logo-cloud::before,
-.logo-cloud::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  border-top: 1px solid var(--secondary-light-grey);
-}
-.logo-cloud::before { top: -1px; }
-.logo-cloud::after { bottom: -1px; }
-
-.logo-card {
-  position: relative;
+.logo-track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 34px 16px;
-  border-right: 1px solid var(--secondary-light-grey);
-  border-bottom: 1px solid var(--secondary-light-grey);
+  gap: 72px;
+  width: max-content;
+  animation: logo-scroll 26s linear infinite;
 }
-.logo-card.logo-card-accent { background: var(--background-grey); }
-.logo-card img { max-width: 140px; max-height: 56px; width: auto; height: auto; object-fit: contain; }
-
-.logo-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: #b7b7b7;
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-track img {
+  height: 52px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
-.logo-placeholder svg {
-  width: 26px; height: 26px;
-  stroke: currentColor; fill: none;
-  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-.logo-placeholder span {
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: .72rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  color: #b7b7b7;
-}
-
-.logo-plus {
-  position: absolute;
-  right: -12.5px;
-  bottom: -12.5px;
-  z-index: 2;
-  color: var(--secondary-light-grey);
-  background: var(--background-white);
-  border-radius: 50%;
-}
-.logo-plus svg {
-  width: 22px; height: 22px;
-  stroke: currentColor; fill: none;
-  stroke-width: 1;
-}
-
-@media (min-width: 768px) {
-  .logo-cloud { grid-template-columns: repeat(4, 1fr); }
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
 }
 @media (max-width: 640px) {
-  .logo-card { padding: 26px 10px; }
+  .logo-track { gap: 44px; }
+  .logo-track img { height: 40px; max-width: 120px; }
 }
 
 /* ============================================================
