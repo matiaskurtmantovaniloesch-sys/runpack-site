@@ -458,21 +458,8 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 }
 .pillar-card p { color: var(--ink); position: relative; z-index: 2; transition: color .4s ease; }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.pillar-icon {
-  position: relative;
-  z-index: 2;
-  width: 54px; height: 54px;
-  border-radius: 50%;
-  background: rgba(212,173,2,.15);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 20px;
-  transition: background .4s ease;
-}
-.pillar-icon svg { width: 26px; height: 26px; stroke: var(--accent-yellow-hover); transition: stroke .4s ease; }
 .pillar-card h3 { position: relative; z-index: 2; margin-bottom: 10px; font-size: 1.2rem; transition: color .4s ease; }
 .pillar-card:hover h3, .pillar-card:hover p { color: #fff; }
-.pillar-card:hover .pillar-icon { background: rgba(255,255,255,.2); }
-.pillar-card:hover .pillar-icon svg { stroke: #fff; }
 
 /* ============================================================
    Steps grid (linha de produção)
