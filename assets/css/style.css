@@ -684,6 +684,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
   border-bottom: 1px solid var(--secondary-light-grey);
 }
 .logo-card.logo-card-accent { background: var(--background-grey); }
+.logo-card img { max-width: 140px; max-height: 56px; width: auto; height: auto; object-fit: contain; }
 
 .logo-placeholder {
   display: flex;
