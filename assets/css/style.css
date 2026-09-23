@@ -668,7 +668,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
   justify-content: center;
   gap: 36px;
   width: max-content;
-  animation: logo-scroll 26s linear infinite;
+  animation: logo-scroll 26s linear 1 forwards;
 }
 .logo-marquee:hover .logo-track { animation-play-state: paused; }
 .logo-track img {
