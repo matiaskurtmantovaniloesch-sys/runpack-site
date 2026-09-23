@@ -398,11 +398,26 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 /* ============================================================
    Pillars (Eficiência / Qualidade / Suporte)
    ============================================================ */
+.sm-machines-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 .sm-machines-logo {
   display: block;
   height: 210px;
   width: auto;
-  margin: 0 auto;
+  flex-shrink: 0;
+}
+.sm-machines-text {
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .sm-machines-block { flex-direction: column; text-align: center; }
+  .sm-machines-logo { height: 150px; }
 }
 .pillars {
   display: grid;
