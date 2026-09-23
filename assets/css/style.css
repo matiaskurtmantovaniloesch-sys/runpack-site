@@ -671,9 +671,9 @@ three-d-stage:not(:defined) { visibility: hidden; }
 }
 .logo-marquee:hover .logo-track { animation-play-state: paused; }
 .logo-track img {
-  height: 73px;
+  height: 95px;
   width: auto;
-  max-width: 224px;
+  max-width: 291px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -686,7 +686,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 }
 @media (max-width: 640px) {
   .logo-track { gap: 44px; }
-  .logo-track img { height: 56px; max-width: 168px; }
+  .logo-track img { height: 73px; max-width: 218px; }
 }
 
 /* ============================================================
