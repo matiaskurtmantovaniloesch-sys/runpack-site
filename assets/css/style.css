@@ -288,17 +288,17 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   z-index: 2;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 40px;
   width: 100%;
 }
-.hero-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.hero-inner { max-width: 720px; text-align: left; }
 
 .hero .eyebrow { color: var(--accent-yellow); }
 .hero h1 { color: #fff; margin-bottom: 18px; }
-.hero .lede { color: #eee; margin-bottom: 34px; margin-inline: auto; }
+.hero .lede { color: #eee; margin-bottom: 34px; }
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-.hero .hero-ctas { justify-content: center; }
+.hero .hero-ctas { justify-content: flex-start; }
 
 .flag-icon {
   display: inline-flex;
