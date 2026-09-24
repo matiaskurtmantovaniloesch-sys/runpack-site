@@ -445,7 +445,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
   border-radius: var(--radius);
   transform: skewX(15deg);
   transition: all .5s ease;
-  background: linear-gradient(315deg, var(--primary-green), var(--primary-green-dark));
+  background: linear-gradient(315deg, var(--accent-yellow), var(--accent-yellow-hover));
   z-index: 0;
   pointer-events: none;
 }
@@ -459,7 +459,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
 .pillar-card p { color: var(--ink); position: relative; z-index: 2; transition: color .4s ease; }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .pillar-card h3 { position: relative; z-index: 2; margin-bottom: 10px; font-size: 1.2rem; transition: color .4s ease; }
-.pillar-card:hover h3, .pillar-card:hover p { color: #fff; }
+.pillar-card:hover h3, .pillar-card:hover p { color: var(--primary-navy); }
 
 /* ============================================================
    Steps grid (linha de produção)
