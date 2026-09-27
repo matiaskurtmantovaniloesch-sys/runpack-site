@@ -75,4 +75,48 @@ document.addEventListener('DOMContentLoaded', function () {
       if (progressFill) progressFill.style.width = scrolled + '%';
     }, { passive: true });
   }
+
+  // Lightbox: expandir fotos ao clicar, com X para fechar
+  var lightboxCandidates = Array.prototype.filter.call(
+    document.querySelectorAll('main img:not([aria-hidden="true"])'),
+    function (img) { return !img.closest('.logo-marquee'); }
+  );
+  if (lightboxCandidates.length) {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Imagem ampliada');
+    overlay.innerHTML = '<button type="button" class="lightbox-close" aria-label="Fechar imagem">&times;</button><img alt="">';
+    document.body.appendChild(overlay);
+
+    var overlayImg = overlay.querySelector('img');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+    var lastFocused = null;
+
+    var openLightbox = function (img) {
+      lastFocused = document.activeElement;
+      overlayImg.src = img.currentSrc || img.src;
+      overlayImg.alt = img.alt || '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    };
+    var closeLightbox = function () {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    };
+
+    lightboxCandidates.forEach(function (img) {
+      img.addEventListener('click', function () { openLightbox(img); });
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+    });
+  }
 });
