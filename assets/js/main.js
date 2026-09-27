@@ -76,6 +76,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
+  // Feature panel: clique na lista troca o item ativo e a mídia do painel
+  var featureItems = document.querySelectorAll('.feature-item');
+  var featureMediaImg = document.getElementById('featureMediaImg');
+  if (featureItems.length) {
+    featureItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        if (item.classList.contains('is-active')) return;
+        featureItems.forEach(function (i) { i.classList.remove('is-active'); });
+        item.classList.add('is-active');
+        if (!featureMediaImg) return;
+        var src = item.getAttribute('data-media');
+        var alt = item.getAttribute('data-alt') || '';
+        featureMediaImg.classList.add('is-fading');
+        setTimeout(function () {
+          featureMediaImg.src = src;
+          featureMediaImg.alt = alt;
+          featureMediaImg.classList.remove('is-fading');
+        }, 200);
+      });
+    });
+  }
+
   // Lightbox: expandir fotos ao clicar, com X para fechar
   var lightboxCandidates = Array.prototype.filter.call(
     document.querySelectorAll('main img:not([aria-hidden="true"])'),
