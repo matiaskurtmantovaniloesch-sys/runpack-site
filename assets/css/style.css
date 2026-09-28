@@ -1068,7 +1068,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 .pillar-slide:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-md); }
 .pillar-slide-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(8,31,55,.08) 30%, rgba(8,31,55,.85) 100%);
+  background: linear-gradient(180deg, rgba(8,31,55,.4) 0%, rgba(8,31,55,.6) 45%, rgba(8,31,55,.92) 100%);
 }
 .pillar-slide-body { position: relative; z-index: 1; color: #fff; display: block; text-align: center; }
 .pillar-slide-cat {
