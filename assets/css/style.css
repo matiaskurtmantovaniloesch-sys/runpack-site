@@ -1069,7 +1069,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(8,31,55,.08) 30%, rgba(8,31,55,.85) 100%);
 }
-.pillar-slide-body { position: relative; z-index: 1; color: #fff; display: block; }
+.pillar-slide-body { position: relative; z-index: 1; color: #fff; display: block; text-align: center; }
 .pillar-slide-cat {
   display: block; font-size: 13px; font-weight: 700; text-transform: uppercase;
   letter-spacing: .06em; color: var(--accent-yellow); margin-bottom: 10px;
