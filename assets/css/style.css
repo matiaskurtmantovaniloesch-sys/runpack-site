@@ -1038,6 +1038,7 @@ three-d-stage:not(:defined) { visibility: hidden; }
 .pillars-carousel-wrap { margin-top: 44px; }
 .pillars-carousel {
   display: flex;
+  justify-content: center;
   gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
