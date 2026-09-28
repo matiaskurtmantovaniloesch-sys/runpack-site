@@ -1085,17 +1085,6 @@ three-d-stage:not(:defined) { visibility: hidden; }
 .pillar-slide-btn svg { width: 17px; height: 17px; color: var(--primary-navy); transition: transform .3s ease; }
 .pillar-slide:hover .pillar-slide-btn svg { transform: rotate(45deg); }
 
-.pillars-carousel-controls { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }
-.carousel-arrow {
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1.5px solid var(--secondary-light-grey); background: #fff;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: background .2s ease, border-color .2s ease;
-}
-.carousel-arrow svg { width: 18px; height: 18px; color: var(--primary-navy); }
-.carousel-arrow:hover:not(:disabled) { background: var(--background-grey); }
-.carousel-arrow:disabled { opacity: .35; cursor: default; }
-
 @media (max-width: 640px) {
   .pillar-slide { width: 240px; height: 340px; padding: 22px; }
   .pillar-slide-title { font-size: 18px; }

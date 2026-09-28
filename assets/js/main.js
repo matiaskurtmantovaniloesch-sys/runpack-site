@@ -76,32 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  // Pillars carousel: setas para navegar entre os cards
-  var pillarsCarousel = document.getElementById('pillarsCarousel');
-  if (pillarsCarousel) {
-    var prevArrow = document.querySelector('.carousel-arrow[data-dir="prev"]');
-    var nextArrow = document.querySelector('.carousel-arrow[data-dir="next"]');
-    var slideStep = function () {
-      var slide = pillarsCarousel.querySelector('.pillar-slide');
-      return slide ? slide.getBoundingClientRect().width + 24 : 300;
-    };
-    var updateArrows = function () {
-      if (prevArrow) prevArrow.disabled = pillarsCarousel.scrollLeft <= 4;
-      if (nextArrow) {
-        nextArrow.disabled = pillarsCarousel.scrollLeft + pillarsCarousel.clientWidth >= pillarsCarousel.scrollWidth - 4;
-      }
-    };
-    if (prevArrow) prevArrow.addEventListener('click', function () {
-      pillarsCarousel.scrollBy({ left: -slideStep(), behavior: 'smooth' });
-    });
-    if (nextArrow) nextArrow.addEventListener('click', function () {
-      pillarsCarousel.scrollBy({ left: slideStep(), behavior: 'smooth' });
-    });
-    pillarsCarousel.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
-    updateArrows();
-  }
-
   // Feature panel: clique na lista troca o item ativo e a mídia do painel
   var featureItems = document.querySelectorAll('.feature-item');
   var featureMediaImg = document.getElementById('featureMediaImg');
