@@ -1033,6 +1033,75 @@ three-d-stage:not(:defined) { visibility: hidden; }
 }
 
 /* ============================================================
+   Pillars carousel (cards com foto + texto, estilo carrossel)
+   ============================================================ */
+.pillars-carousel-wrap { margin-top: 44px; }
+.pillars-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.pillars-carousel::-webkit-scrollbar { display: none; }
+.pillar-slide {
+  position: relative;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.pillar-slide:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-md); }
+.pillar-slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,31,55,.08) 30%, rgba(8,31,55,.85) 100%);
+}
+.pillar-slide-body { position: relative; z-index: 1; color: #fff; display: block; }
+.pillar-slide-cat {
+  display: block; font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--accent-yellow); margin-bottom: 10px;
+}
+.pillar-slide-title {
+  display: block; font-family: var(--font-title); font-size: 21px; line-height: 1.28;
+}
+.pillar-slide-btn {
+  position: relative; z-index: 1; align-self: flex-end;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  margin-top: 18px; flex-shrink: 0;
+}
+.pillar-slide-btn svg { width: 17px; height: 17px; color: var(--primary-navy); transition: transform .3s ease; }
+.pillar-slide:hover .pillar-slide-btn svg { transform: rotate(45deg); }
+
+.pillars-carousel-controls { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+.carousel-arrow {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--secondary-light-grey); background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s ease, border-color .2s ease;
+}
+.carousel-arrow svg { width: 18px; height: 18px; color: var(--primary-navy); }
+.carousel-arrow:hover:not(:disabled) { background: var(--background-grey); }
+.carousel-arrow:disabled { opacity: .35; cursor: default; }
+
+@media (max-width: 640px) {
+  .pillar-slide { width: 240px; height: 340px; padding: 22px; }
+  .pillar-slide-title { font-size: 18px; }
+}
+
+/* ============================================================
    Feature panel (lista clicável + painel de mídia)
    ============================================================ */
 .feature-panel {
