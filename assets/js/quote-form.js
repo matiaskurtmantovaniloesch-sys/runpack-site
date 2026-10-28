@@ -2,7 +2,7 @@
 // para a planilha Google Sheets via Google Apps Script Web App.
 (function () {
   // Preencha com a URL do "App da Web" gerada no Apps Script (termina em /exec).
-  var ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbwfh2jdo4dccn81MkJnxsZArcwrfmSGtKTWNvPdXFCpQYi0v6JPaJ2XvGMNYIjFZ3zyJQ/exec';
+  var ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbyDEI4soz_Sxsbe0qcI8OOuzp2wWWQ4vKdvtoQeE-BA3dJWJFkhUOpRF_ddcE27p8NVaQ/exec';
 
   document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('form[data-sheet]');
