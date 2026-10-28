@@ -1,4 +1,4 @@
-// Braspack — envia os formulários (Contato, Telescópica-RPE, Suporte)
+// Braspack — envia os formulários (Contato, Palletizador, Suporte)
 // para a planilha Google Sheets via Google Apps Script Web App.
 (function () {
   // Preencha com a URL do "App da Web" gerada no Apps Script (termina em /exec).
