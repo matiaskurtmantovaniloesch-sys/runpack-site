@@ -54,6 +54,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (tabsList && flowSteps.length) {
     var tabLinks = tabsList.querySelectorAll('a');
 
+    // Gruda a barra logo abaixo do cabeçalho fixo, qualquer que seja a altura dele.
+    var siteHeader = document.querySelector('.site-header');
+    var tabsBar = tabsList.closest('.tabs-bar');
+    var syncTabsTop = function () {
+      if (siteHeader && tabsBar) tabsBar.style.setProperty('--header-h', siteHeader.offsetHeight + 'px');
+    };
+    syncTabsTop();
+    window.addEventListener('resize', syncTabsTop);
+
     var setActiveTab = function (id) {
       tabLinks.forEach(function (t) {
         t.classList.toggle('active', t.getAttribute('href') === '#' + id);

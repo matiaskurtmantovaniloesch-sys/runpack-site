@@ -689,7 +689,7 @@ li.spec-item .chevron { position: absolute; left: 0; top: .3em; }
    ============================================================ */
 .tabs-bar {
   position: sticky;
-  top: 68px;
+  top: var(--header-h, 78px);
   z-index: 100;
   background: #fff;
   border-bottom: 1px solid var(--secondary-light-grey);
